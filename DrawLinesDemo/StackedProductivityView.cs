@@ -100,8 +100,8 @@ namespace DrawLinesDemo
 
                 var startx = startPoint;
                 var starty = y * paint.StrokeWidth;
-                var stopx = width * itemLength;
-                var stopy = y * paint.StrokeWidth;
+                var stopx = startx + width * itemLength;
+                var stopy = starty;
 
                 Console.WriteLine("\r\nY-Axis: " + y);
                 Console.WriteLine("Width (ProductivityValue): " + width);
@@ -117,7 +117,7 @@ namespace DrawLinesDemo
 
                 canvas.DrawLine(startx, starty, stopx, stopy, paint);
 
-                startPoint += width * itemLength;
+                startPoint = stopx;
 
                 y++;
             }
